@@ -1,5 +1,5 @@
 
-use crate::models::{User, Address};
+use crate::models::auth::{User, Address};
 use sqlx::postgres::PgPoolOptions;
 use std::sync::Arc;
 use axum::{Json};
@@ -96,7 +96,7 @@ pub async fn add_user(user: Json<User>,) -> String {
     let durl = std::env::var("DATABASE_URL").expect("set DATABASE_URL env variable");
 
     let pool = Arc::new(PgPoolOptions::new()
-        .max_connections(5)
+        .max_connections(10)
         .connect(&durl)
         .await
         .expect("unable to connect to database"));
