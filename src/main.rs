@@ -1,4 +1,4 @@
-use axum::{Router};
+use axum::Router;
 use axum::routing::post;
 use axum::routing::get;
 use dotenv::dotenv;

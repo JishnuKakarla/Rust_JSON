@@ -9,7 +9,7 @@ pub struct Address {
 #[derive(Serialize, Deserialize,Debug)]
 pub struct User {
     pub name: String,
+    
     pub email: String,
     pub address: Vec<Address>,
 }
-
